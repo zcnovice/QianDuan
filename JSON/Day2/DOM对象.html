@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM对象</title>
+</head>
+<body>
+    <!-- 
+    DOM对象
+        1.DOM对象：Document Object Model，文档对象模型，
+        2.DOM对象：
+            - 浏览器对象模型
+            - 节点对象模型
+            - 事件对象模型
+            - 浏览器对象模型
+            - 节点对象模型
+            - 事件对象模型
+            - 浏览器对象模型
+            - 节点对象模型
+            - 事件对象模型
+            - 浏览器对象模型
+            - 节点对象模型
+            Document对象
+                getElementById()
+                getElementByName()  
+
+            Element对象
+            Node对象
+            Attr对象
+            Text对象
+            Comment对象
+            Event对象
+            History对象
+            Location对象
+            Navigator对象
+            Screen对象
+            Style对象
+            Window对象
+            
+    -->
+
+
+
+    <input type="text" id="S">
+    <input type="button" value="添  加" onclick="addS()">
+
+
+    <input type="button" value="删除第一个" onclick="FirstS()">
+    <input type="button" value="删除最后一个" onclick="RemoveS()">
+    <ol id = "ol1">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ol>
+    <script>
+        function addS(){
+            //获取文本框中的值
+            var s = document.getElementById("S").value;
+            //创建li标签元素
+            var li = document.createElement("li");
+            //创建文本结点对象
+            var textS = document.createTextNode(s);
+            //链接文本结点对象和li标签元素
+            li.appendChild(textS);
+
+            //还要连接到ol标签中
+            //先获取ol标签
+            var ol = document.getElementById("ol1");
+            //在链接上
+            ol.appendChild(li);
+
+        }
+
+
+        function RemoveS(){
+            //获取ol标签
+            var ol = document.getElementById("ol1");
+            //获取ol标签中的第一个li标签
+            var li = ol.lastElementChild;
+            //删除li标签
+            ol.removeChild(li);
+        }
+
+        function FirstS(){
+            //获取ol标签
+            var ol = document.getElementById("ol1");
+            //获取ol标签中的第一个li标签
+            var li = ol.firstElementChild;
+            //删除li标签
+            ol.removeChild(li);
+        }
+    </script>
+    
+</body>
+</html>

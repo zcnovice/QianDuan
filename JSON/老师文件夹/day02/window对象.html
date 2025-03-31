@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window对象</title>
+</head>
+<body>
+    <!-- 
+    
+        BOM对象：
+            浏览器对象模型
+        window对象:
+            location对象: 包含当前浏览器地址栏URL信息 
+            history对象: 
+    -->
+
+    <!-- 
+        href属性：设置当前url地址
+
+    
+    -->
+        <input type="button" value="不服点我!" onclick="btn()"> 
+        <input type="button" value="刷新页面" onclick="btn2()"> 
+        <input type="button" value="替换文档" onclick="btn3()"> 
+    <script>
+        function btn3(){
+            location.replace("json对象.html")
+            
+        }
+        function btn(){
+            location.href = "http://www.baidu.com";
+            // var urlV = location.href;
+            // alert(urlV)
+        }
+        //刷新页面
+        function btn2(){
+            location.reload();
+        }
+
+
+    </script>
+
+</body>
+</html>

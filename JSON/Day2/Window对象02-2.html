@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="uname">
+    <input type="button" value="保存数据" onclick="btn()">
+    <input type="button" value="跳转页面" onclick="tooPage()">
+    <script>
+        function btn(){
+            var is = document.getElementById('uname');
+            var uname = is.value;
+            //存放会话状态，当关闭窗口时，数据会丢失
+            sessionStorage.setItem('uname',uname);
+            //存放持久化状态，当关闭窗口时，数据不会丢失
+            //localStorage.setItem('uname',uname);
+        }
+        
+        
+        function tooPage(){
+            location.href = 'Window对象02.html';
+        }
+
+    </script>
+</body>
+</html>

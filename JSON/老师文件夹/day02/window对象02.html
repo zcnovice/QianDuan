@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="获取用户名称" onclick="getUname()">
+    <input type="button" value="关闭窗口" onclick="close1()">
+    <input type="button" value="消息对话框" onclick="confirm1()">
+    <input type="button" value="关闭" onclick="clear1()">
+    <input type="button" value="openWindow" onclick="openWindow1()">
+
+    <script>
+        /*
+            sessionStorage: 存放会话之间的数据、
+                使用sessionStorage可以保证客户端在没有关闭浏览器之前多个窗口之间数据共享
+            localStorage: 存放永久数据
+        
+        */
+        function openWindow1(){
+            open("window对象.html");
+        }
+
+        function getUname(){
+            var uname = localStorage.getItem("uname");
+            alert("用户名 = " + uname);
+        }
+
+        function close1(){
+            window.close();
+        }
+
+        function confirm1(){
+            var flag = window.confirm("你输入删除当前这条数据?");
+            if(flag){
+                alert("删除成功!")
+            }else{
+                alert("删除失败!")
+            }
+        }
+
+        // var inputStr = window.prompt("请输入用户名:");
+        // alert(inputStr)
+
+        var setInterVal_id = setInterval(()=>{
+            alert("你好！小李啊!");
+        },3000);
+
+        //关闭setInterval函数
+        function clear1(){
+            clearInterval(setInterVal_id);
+        }
+
+        // setTimeout(() => {
+        //     alert("你好！小李啊!");
+        // }, 2000);
+
+    </script>
+</body>
+</html>

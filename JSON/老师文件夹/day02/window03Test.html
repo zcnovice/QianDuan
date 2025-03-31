@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>向sessionStorage中保存数据</title>
+</head>
+<body>
+    <input type="text"  id="uname" />
+    <input type="button" value="保存数据" onclick="saveData()">
+    <input type="button" value="跳转页面" onclick="tooPage()">
+    <!-- <a href="window对象02.html">跳转window02页面</a> -->
+    <script>
+        function saveData(){
+            //获取用户在输入框中内容
+            var inputEle = document.getElementById("uname");
+            var uname = inputEle.value; //获取输入项值
+            //把值保存到sessionStorage中
+            localStorage.setItem("uname",uname);
+        }
+        
+        function tooPage(){
+            location.href = "window对象02.html";
+        }
+
+        
+    </script>
+</body>
+</html>

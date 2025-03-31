@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json对象</title>
+</head>
+<body>
+    <!-- json对象 -->
+
+
+
+    <script>
+        
+    // private int id;
+    // private String name;
+    // private String[] likes;
+    // private Cat cat;
+
+    //转换为json字符串            对象用的是{}  数组用的是[]
+    var userJson = {"id":1,"name":"小明","likes":["吃饭","睡觉","打豆豆"],"cat":{"id":1,"name":"小花"}}
+    
+    alert(userJson)//这个显示的是 [object Object]
+
+    alert(userJson.name)//下面这些显示的是对应的值
+    alert(userJson.likes[0])
+    alert(userJson.cat.name)
+
+
+
+    //对象用的是{}  数组用的是[]   数组对象用的是[{},{},{}]
+
+    var userJsons = [
+        {"id":1,"name":"小明","likes":["吃饭","睡觉","打豆豆"],"cat":{"id":1,"name":"小花"}},
+        {"id":2,"name":"小红","likes":["吃饭","睡觉","打豆豆"],"cat":{"id":2,"name":"小花"}},
+        {"id":3,"name":"小花","likes":["吃饭","睡觉","打豆豆"],"cat":{"id":2,"name":"小花"}}
+    ]
+    //调用
+    alert(userJsons)// 显示的是  ->  [object Object],[object Object],[object Object]
+    alert(userJsons[0].name)//小明
+    alert(userJsons[0].cat.name)//小花
+
+
+
+    //定义JSON字符串
+    var userJson = '{"id":1,"name":"小明","likes":["吃饭","睡觉","打豆豆"],"cat":{"id":1,"name":"小花"}}'
+
+    //转化为JSON对象
+    var userJsonObj = JSON.parse(userJson)
+    alert(userJsonObj)//结果  ->   [object Object]
+
+    //对象转换为JSON字符串
+    var userJsonStr = JSON.stringify(userJsonObj)
+    alert(userJsonStr)//结果  ->   {"id":1,"name":"小明","likes":["吃饭","睡觉","打豆豆"],"cat":{"id":1,"name":"小花"}}
+
+
+
+    </script>
+</body>
+</html>

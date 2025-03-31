@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test2页面</title>
+</head>
+<body>
+    <h1>test2页面</h1>
+    <a href="test3.html">跳转test3页面</a>
+    <input type="button" value="backPage" onclick="backPage()" />
+    <input type="button" value="nextPage" onclick="toPage()" />
+    <script>
+
+        function backPage(){
+            history.back();
+        }
+        function toPage(){
+            history.forward();
+        }
+
+    </script>
+</body>
+</html>

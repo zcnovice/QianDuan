@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows对象</title>
+</head>
+<body>
+    <!-- 
+    BOM对象
+        window对象
+            location对象
+                href属性: 获取当前页面的url
+                reload方法: 重新加载当前页面
+                target属性: 获取当前页面的target属性
+                assign方法: 跳转到指定页面
+                replace方法: 替换当前页面
+                
+            history对象
+                back方法: 后退
+                forward方法: 前进
+                go方法: 跳转到指定页面
+                length属性: 获取历史记录的长度
+                state属性: 获取当前页面的状态
+                pushState方法: 添加历史记录
+                replaceState方法: 替换历史记录
+                popstate事件: 监听历史记录的变化
+                scrollRestoration属性: 获取滚动条的恢复方式
+
+            Console对象
+                log方法: 打印日志
+                info方法: 打印信息
+                warn方法: 打印警告
+                error方法: 打印错误
+                clear方法: 清空控制台
+                time方法: 打印时间
+                timeEnd方法: 结束时间
+                trace方法: 打印堆栈
+                group方法: 打印分组
+                groupEnd方法: 结束分组
+                count方法: 打印计数
+                countReset方法: 重置计数
+                
+            navigator对象
+            screen对象
+            document对象
+            frames对象
+            top对象
+            parent对象
+            self对象
+            opener对象
+            name对象
+            closed对象
+            length对象
+            open方法
+            close方法
+            print方法
+            moveTo方法
+            moveBy方法
+            resizeTo方法
+            resizeBy方法
+ -->
+
+    <!-- <input type="button" value="点击跳转到百度" onclick=" location.href='https://www.baidu.com'"> -->
+    <input type="button" value="点击跳转到百度" onclick="btn()">
+    <input type="button" value="点击重新加载当前页面" onclick="btn2()">
+    <input type="button" value="载入新文档替换当前页面" onclick="replaceDoc()"></input>
+    <script>
+        // location对象
+        //         href属性: 获取当前页面的url
+        //         reload方法: 重新加载当前页面
+        //         target属性: 获取当前页面的target属性
+        //         assign方法: 跳转到指定页面
+        //         replace方法: 替换当前页面
+        function btn(){
+            location.href = "https://www.baidu.com"
+        }
+        
+        function btn2(){
+            location.reload()
+        }
+
+
+        function replaceDoc(){
+            window.location.replace("https://www.runoob.com")
+        }
+    </script>
+</body>
+</html>

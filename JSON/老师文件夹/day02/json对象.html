@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json对象初体验</title>
+</head>
+<body>
+    <script>
+
+        //定义json对象
+       // var jsonObj = {"uid":22,"uname":"倩倩","isDelete":false,"like":["泡澡","敲代码","旅游"],"cat":{"color":"橘色","cname":"小灰"}};
+
+
+        //取值 （通过key或者value值）
+        // alert(jsonObj)
+        // alert("姓名:" + jsonObj.uname)
+        // alert("是否删除:" + jsonObj.isDelete)
+        // alert("爱好:" + jsonObj.like)
+        // alert("猫对象:" + jsonObj.cat)
+
+        //定义json数组
+        // var jsonArr = [
+        //     {"uid":22,"uname":"倩倩","isDelete":false,"like":["泡澡","敲代码","旅游"],"cat":{"color":"橘色","cname":"小灰"}},
+        //     {"uid":22,"uname":"晚晚","isDelete":false,"like":["泡澡","敲代码","旅游"],"cat":{"color":"橘色","cname":"小灰"}},
+        //     {"uid":22,"uname":"周杰伦","isDelete":false,"like":["泡澡","敲代码","旅游"],"cat":{"color":"橘色","cname":"小灰"}}
+        // ]
+        // alert(jsonArr)
+
+        //定义json格式字符串
+        // var jsonstr = '{"uid":22,"uname":"倩倩","isDelete":false,"like":["泡澡","敲代码","旅游"],"cat":{"color":"橘色","cname":"小灰"}}'
+        // //把json格式字符串转换成json对象
+        // var obj = JSON.parse(jsonstr);
+        // alert(obj.uname)
+
+        //把json对象转换成json格式字符串   使用stringify()函数
+        var jsonObj = {"uid":22,"uname":"倩倩","isDelete":false,"like":["泡澡","敲代码","旅游"],"cat":{"color":"橘色","cname":"小灰"}}
+
+        var jsonstr = JSON.stringify(jsonObj);
+        alert(jsonstr);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test1页面</title>
+</head>
+<body>
+    <h1>test1页面</h1>
+    <a href="test2.html">跳转test2页面</a>
+    <input type="button" value="nextPage" onclick="toPage()" />
+    <script>
+
+        function toPage(){
+            // history.forward();
+            history.go(2);
+        }
+
+    </script>
+</body>
+</html>
