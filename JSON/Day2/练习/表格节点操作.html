@@ -39,7 +39,8 @@
     <div class="btndiv">
         <input type="button" value="添加数据" onclick="addData1()">
     </div>
-    <!-- 在页面底部可以修改的显示框 -->
+
+    <!-- 可以修改的显示框（默认隐藏） -->
     <div id="editModal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; border: 1px solid #ccc; z-index: 1000;">
         <input type="text" id="editUname"><br>
         <input type="text" id="editSex"><br>
@@ -128,9 +129,8 @@
             const tds = currentEditingTr.getElementsByTagName("td");
             
             // 显示模态框并填充数据
-            //document.getElementById('editModal').style.display = 'block';
-            var s = getElementById('editModal');
-            s.style.display = 'block';
+            document.getElementById('editModal').style.display = 'block';
+            //getElementById('editModal').style.display = 'block';
 
 
             document.getElementById('editUname').value = tds[0].innerHTML;
@@ -141,7 +141,6 @@
         //点击提交修改时的操作
         function submitEdit() {
             if (!currentEditingTr) return;
-            
             // 更新表格数据
             const tds = currentEditingTr.getElementsByTagName("td");
             tds[0].innerHTML = document.getElementById('editUname').value;
