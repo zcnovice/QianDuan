@@ -70,13 +70,15 @@
             //在链接上
             ol.appendChild(li);
 
+            //添加后设置为空
+            document.getElementById("S").value = "";
         }
 
 
         function RemoveS(){
             //获取ol标签
             var ol = document.getElementById("ol1");
-            //获取ol标签中的第一个li标签
+            //获取ol标签中的最后一个li标签
             var li = ol.lastElementChild;
             //删除li标签
             ol.removeChild(li);
@@ -89,6 +91,14 @@
             var li = ol.firstElementChild;
             //删除li标签
             ol.removeChild(li);
+        }
+
+
+
+
+        //向指定位置添加元素
+        function inserNode1(){
+            
         }
     </script>
     

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格节点操作</title>
+    <style>
+        .topdiv,.btndiv{
+            text-align: center;
+        }
+        .topdiv input{
+            margin-left: 50px;
+            width: 200px;
+            height: 30px;
+        }
+        .btndiv input{
+            width: 80px;
+            height: 30px;
+            margin-top: 20px;
+        }
+
+        .userTableData{
+            border-collapse: collapse;
+            width: 800px;
+            margin: auto;
+        }
+        .userTableData th,.userTableData td{
+            border: 1px solid red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="topdiv">
+        <input type="text"  id="uname" placeholder="请输入用户名">
+        <input type="text"  id="sex" placeholder="请输入性别">
+        <input type="text"  id="telphone" placeholder="请输入手机号码">
+    </div>
+    <div class="btndiv">
+        <input type="button" value="添加数据" onclick="addData1()">
+    </div>
+    <!-- 在页面底部可以修改的显示框 -->
+    <div id="editModal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; border: 1px solid #ccc; z-index: 1000;">
+        <input type="text" id="editUname"><br>
+        <input type="text" id="editSex"><br>
+        <input type="text" id="editTel"><br>
+        <button onclick="submitEdit()">提交修改</button>
+        <button onclick="document.getElementById('editModal').style.display = 'none'">取消</button>
+    </div>
+    <!-- 划水平线 -->
+     <hr />
+     <table class="userTableData">
+        <thead>
+            <tr>
+                <th>用户名</th>
+                <th>性别</th>
+                <th>联系方式</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody id="userTbody">
+
+        </tbody>
+     </table>
+
+     <script>
+
+        //实现添加用户数据操作
+        function addData1(){
+            //1.获取所有输入项中内容
+            var uname = document.getElementById("uname").value;
+            var sex = document.getElementById("sex").value;
+            var telphone = document.getElementById("telphone").value;
+
+            //2.创建多个td元素对象
+            var td1 = document.createElement("td");
+            var td2 = document.createElement("td");
+            var td3 = document.createElement("td");
+            var td4 = document.createElement("td");
+
+            //3.向td元素中添加文本或者子元素
+            td1.innerHTML = uname;
+            td2.innerHTML = sex;
+            td3.innerHTML = telphone;
+            //td4.innerHTML = '<a href="#" onclick = "">修  改</a>&nbsp;&nbsp;<a href="#" onclick="delUserData(this)">删  除</a>'
+            
+            //                                  this -- 当前点击的这个结点给传递过去
+            td4.innerHTML = '<a href="#" onclick="editUserData(this)">修  改</a>&nbsp;&nbsp;<a href="#" onclick="delUserData(this)">删  除</a>'
+
+            //创建tr元素
+            var tr = document.createElement("tr");
+
+            //向tr元素下追加td元素
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+            tr.appendChild(td4);
+
+            //把tr追加到tbody元素下
+            document.getElementById("userTbody").appendChild(tr);
+
+            //清空表单
+        }
+
+        //删除指定tr元素
+        function delUserData(aNode){
+            //获取当前a元素的父元素和父元素(获取tr元素)
+            var tr = aNode.parentNode.parentNode;
+            var tds = tr.getElementsByTagName("td");
+            //显示删除消息提示框
+            var flag = confirm("你确定要删除" +tds[0].innerHTML + "用户吗?");
+            //删除
+            if(flag){
+                document.getElementById("userTbody").removeChild(tr); //删除tr元素
+            }
+
+
+        }
+// --------------------------------------------------------------------------------------------------------
+
+            // 全局变量保存当前正在编辑的tr
+        let currentEditingTr = null;
+        
+        function editUserData(aNode) {
+            // 获取当前元素的父元素和父元素(获取tr元素[获取当前行的数据])
+            currentEditingTr = aNode.parentNode.parentNode;
+            //获取里面的td元素  (相当与获取到td数组)
+            const tds = currentEditingTr.getElementsByTagName("td");
+            
+            // 显示模态框并填充数据
+            //document.getElementById('editModal').style.display = 'block';
+            var s = getElementById('editModal');
+            s.style.display = 'block';
+
+
+            document.getElementById('editUname').value = tds[0].innerHTML;
+            document.getElementById('editSex').value = tds[1].innerHTML;
+            document.getElementById('editTel').value = tds[2].innerHTML;
+        }
+        
+        //点击提交修改时的操作
+        function submitEdit() {
+            if (!currentEditingTr) return;
+            
+            // 更新表格数据
+            const tds = currentEditingTr.getElementsByTagName("td");
+            tds[0].innerHTML = document.getElementById('editUname').value;
+            tds[1].innerHTML = document.getElementById('editSex').value;
+            tds[2].innerHTML = document.getElementById('editTel').value;
+            
+            //进行隐藏
+            document.getElementById('editModal').style.display = 'none';
+            currentEditingTr = null;
+        }
+
+    </script>
+
+
+</body>
+</html>

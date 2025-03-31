@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom节点操作</title>
+</head>
+<body>
+    <input type="text" id="city" />
+    <input type="button" value="添  加" onclick="addCity()">
+    <input type="button" value="删  除" onclick="delCity()">
+    <input type="button" value="插入节点" onclick="insertNode1()">
+    <input type="button" value="替换节点" onclick="repalceNode1()">
+    <input type="button" value="克隆节点" onclick="cloneNode1()">
+    <input type="button" value="添加属性" onclick="addAttr1()">
+    <ol id="ol1" >
+        <li id="li1" class="li1" name="test1">aaa</li>
+        <li id="li2" class="li1">bbb</li>
+        <li name="test1">ccc</li>
+    </ol>
+    <img src="E://wn/img/wh.jpg" alt="加载失败" id="img1">
+    <div id="div1">
+
+    </div>
+    <script>
+        //给元素添加属性
+        function addAttr1(){
+            var image = document.getElementById("img1");
+            image.setAttribute("src","E://wn/img/wh2.jpg");
+
+            //1.获取ol元素
+            // var ol = document.getElementById("ol1");
+            // //2.给元素设置属性及其属性值
+            // ol.setAttribute("title","新增属性");
+
+            // //删除属性
+            // ol.removeAttribute("title");
+            // //获取属性值
+            // var attrVal = ol.getAttribute("title");
+            // alert(attrVal)
+
+        }
+
+        //复制元素节点，添加到指定文件显示
+        function cloneNode1(){
+            //1.获取ol元素
+            var ol = document.getElementById("ol1");
+            //2.克隆ol元素及其下的所有子元素
+            var ol2 = ol.cloneNode(true);
+            //3.获取div元素
+            var div = document.getElementById("div1");
+            //4.向div元素下添加ol列表
+            div.appendChild(ol2); //
+        }
+
+        //替换指定元素
+        function repalceNode1(){
+            //1.获取ol元素
+            var ol = document.getElementById("ol1");
+            //2.获取目标元素
+            var oldLi = document.getElementById("li1");
+            //3.创建新元素
+            var newLi = document.createElement("li");
+            //4.向新元素下添加文本内容
+            newLi.innerHTML = "宜宾市"
+            //5.把新元素添加到目标位置
+            ol.replaceChild(newLi,oldLi);
+        }
+
+        //实现向ol下指定文件插入子元素
+        function insertNode1(){
+            //1.获取ol元素
+            var ol = document.getElementById("ol1");
+            //2.获取目标元素
+            var oldLi = document.getElementById("li2");
+            //3.创建新元素
+            var newLi = document.createElement("li");
+            //4.向新元素下添加文本内容
+            newLi.innerHTML = "成都市"
+            //5.把新元素添加到目标位置
+            ol.insertBefore(newLi,oldLi);
+        }
+
+        //删除列表中节点
+        function delCity(){
+            //1.获取ol元素
+            var ol = document.getElementById("ol1");
+            //2.获取ol元素下所有li
+            var lis = ol.getElementsByTagName("li");
+            //3.调用removeChild函数删除
+            ol.removeChild(lis[lis.length - 1]);
+        }
+
+
+        //实现把文本添加到列表下
+        function addCity(){
+
+            //1.获取文本框中输入内容
+            var cityVal = document.getElementById("city").value;
+            //2.创建li元素
+            var newLi = document.createElement("li"); //创建一个新元素并返回
+            //3.创建文本对象
+            var textObj = document.createTextNode(cityVal);
+            //4.把文本对象添加到新创建li元素下
+            newLi.appendChild(textObj);
+            //5.获取ol对象
+            var ol = document.getElementById("ol1");
+            //6.把li元素添加到ol下
+            ol.appendChild(newLi);
+            //清空输入项
+            document.getElementById("city").value = "";
+        }
+    </script>
+</body>
+</html>
