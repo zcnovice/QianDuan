@@ -9,54 +9,6 @@
 <body>
 
 
-    <!-- 是一个的库 -->
-    
-    <!-- 
-    jQuery 入口函数:
-
-    $(document).ready(function(){
-        // 执行代码
-    });
-    或者
-    $(function(){
-        // 执行代码
-    });
-    JavaScript 入口函数:
-    
-    window.onload = function () {
-        // 执行代码
-    }
-    jQuery 入口函数与 JavaScript 入口函数的区别：
-    
-     jQuery 的入口函数是在 html 所有标签(DOM)都加载之后，就会去执行。
-     JavaScript 的 window.onload 事件是等到所有内容，包括外部图片之类的文件加载完后，才会执行。 
-     -->
-
-
-    <!-- 原生js获取对象
-    var node = document.getElementById("node"); 
-
-    jQuery
-    $("css选择器")
-    -->
-
-
-    <!-- this关键字转换为jQuery对象 
-     $(this) 或者 $(document)
-    -->
-
-
-
-    <!-- 案例 ：复选操作-->
-
-
-    <!-- <script>
-        $(function(){
-            alert("hello")
-        });
-    </script> -->
-
-
     <input type="checkbox" id="selectAll" title="全选/全不选"/>全选/全不选
     <input type="checkbox" class="likes" title="敲代码"/>敲代码
     <input type="checkbox" class="likes" title="旅游"/>旅游
@@ -73,8 +25,6 @@
             //获取复选框是否被选择
             // 作用：获取 #selectAll 复选框当前的选中状态（true 表示选中，false 表示未选中）。
             // 返回值：布尔值 true/false，存储在变量 flag 中。
-
-            //checked表示选中状态：当复选框/单选按钮被勾选时，checked 属性值为 true；否则为 false。
             var flag = $("#selectAll").prop("checked");
             // alert(flag)
             //获取所有name=likes复选框对象
@@ -86,4 +36,3 @@
 
 </body>
 </html>
-

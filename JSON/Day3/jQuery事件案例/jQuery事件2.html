@@ -13,8 +13,12 @@
     <div style="width: 100px;height: 100px;background-color: black;" class="div1">aaa</div>
 
     <script>
-        $(".div1")
+        //挨个打印出来
+        $(".div1").each(function(index,element){
+            alert(index+""+element)
+        })
 
+    
     </script>
 </body>
 </html>
