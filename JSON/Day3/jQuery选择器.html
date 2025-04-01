@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jQuery-3.7.1.js"></script>
+</head>
+<body>
+    <div id = "name">name</div>
+    <div id = "1">1</div>
+    <div class = "2">2</div>
+    <div class = "2">3</div>
+    <div id = "ss">3ss</div>
+
+    <div class = "111">3</div>
+    <div id = "222">3ss</div>
+
+
+    <div class = "c1">
+        <span>
+            3sdfa
+        </span>
+    </div>
+    <div class = "div1">
+        <p>
+            <span>
+                zhou1
+            </span>
+        </p>
+    </div>
+    <div>
+        ssssss
+    </div>
+    <div id = "c2">
+        <p>
+            <span>
+                3sssads
+            </span>
+        </p>
+    </div>
+    <div id = "div1">
+        s1
+    </div>
+    <div>
+        s2
+    </div>
+    <div>
+        s3
+    </div>
+    <div>
+        s4
+    </div>
+
+    <script>
+        // 设置样式（id选择器生效第一个）
+        $("#name").css("color","red");
+
+        $("#1").css({"color":"blue","font-size":"30px"})
+
+
+        // 设置样式（class选择器生效多个）
+        $(".2").css({"color":"green","font-size":"30px"})
+
+        //  标签选择器  (选择了div下面id = ss的)
+        $("div#ss").css({"color":"yellow","font-size":"30px"})
+
+        //组合选择器
+        $("div#222,div.111").css({"color":"pink","font-size":"30px"})
+
+//---------------------------------------------------------------------------
+        //找div下面所有的span（可以是孙子的span）
+        $("div span").css({"color":"red","font-size":"30px"})
+
+        //指定的父元素下子元素(div下面直接就是span)
+        $("div > span").css({"color":"","font-size":"30px"})
+
+        //查找id为div1其后的第一个div元素
+        $("#div1 + div").css({"background-color":"red","font-size":"100px"})
+        
+        //查找id为div1其后的所有div元素
+        $("#div1 ~ div").css({"background-color":"","font-size":"30px"})
+
+
+//------------------------------------层级选择器---------------------------------------
+        //获取所有div中的第一个
+        $("div:first").css({"background-color":"pink","font-size":"30px"})
+        $("div").first().css({"background-color":"pink","font-size":"30px"})
+
+        //获取所有div中的最后一个
+        $("div:last").css({"background-color":"pink","font-size":"30px"})
+
+        //获取所有div中的第2个
+        $("div:eq(1)").css({"background-color":"red","font-size":"30px"})
+
+        //设置div偶数行颜色为灰色
+        //$("div:even").css({"background-color":"gray","font-size":"30px"})
+
+        //设置div奇数行颜色为红色
+        //$("div:odd").css({"background-color":"red","font-size":"30px"})
+
+
+        //选择div中class不是div1的元素
+        //$("div:not(.div1)").css({"background-color":"blue","font-size":"30px"})
+    </script>
+</body>
+</html>
