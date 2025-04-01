@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery中的dom操作</title>
+    <script src="./js/jquery3.7.1.js"></script>
+</head>
+<body>
+    <!-- 
+        //原生js中创建元素  document.createElement()
+        //jquery中创建元素
+        $("<h1></h1>") 或者 $("<h1/>") 或者 $("<h1>文本内容</h1>")
+        注意： $("<h1>")  错误创建元素方式
+
+        添加元素:  
+            元素对象.appendChild(子元素);
+        
+    -->
+
+    <!-- 定义列表 -->
+     <input type="text" id="inputTxt" />
+     <input type="button" value="添加元素" id="addBtn">
+     <ul id="ul1">
+        <li>aaa</li>
+        <li id="li2">bbb</li>
+        <li>ccc</li>
+     </ul>
+
+     <script>
+        //获取添加按钮元素，绑定click事件
+        $("#addBtn").click(function(){
+            //获取文本值
+            var txt = $("#inputTxt").val();
+            //创建li元素
+            // $("<li>"+txt+"</li>").appendTo($("#ul1"));
+            // $("#ul1").append("<li>"+txt+"</li>");
+            //向ul下前置li元素
+            // $("#ul1").prepend("<li>"+txt+"</li>");
+            // $("<li>"+txt+"</li>").prependTo($("#ul1"));
+            //------------外部插入---------------
+            // $("#li2").after("<li>"+txt+"</li>");
+            //------------替换---------------
+            // $("<b>"+txt+"</b>").replaceAll($("#ul1>li"));
+            //------------删除---------------
+            // $("#ul1").empty();
+            //删除li2元素
+            // $("#li2").remove();
+
+            //复制li2元素，追加到ul元素下的末尾
+            $("#li2").clone(true).appendTo($("#ul1"));
+        });
+     </script>
+</body>
+</html>

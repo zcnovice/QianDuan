@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jQuery-3.7.1.js"></script>
+</head>
+<body>
+    <input type="text" id="userName">
+    <div id="div1" style="height: 100px;width: 100px;background-color: pink;">123</div>
+
+    <script>
+        /* ready 
+        click 鼠标单击事件
+        dblclick 鼠标双击事件
+        change  值改变事件
+        mouseover 鼠标移入事件
+        mouseout 鼠标移出事件
+        mousemove 鼠标移动事件
+        mouseenter 鼠标移入事件
+        mouseleave 鼠标移出事件
+        */
+
+
+        //测试一个 change
+        // $("#userName").change(function(){
+        //     alert("文本改变");
+        // })
+
+
+        //on   ----    可以绑定多个事件
+        // $("#div1").on("mouseover mouseout",function(){
+        //     console.log("触发事件");
+        // })
+
+        //one表示只生效一次，有多个就每个生效一次  
+        // $("#div1").one("mouseover mouseout",function(){
+        //     console.log("触发事件");
+        // })
+
+
+        //off表示解除生效
+
+        // $("#div1").click(function(){
+        //     $("#div1").off("mouseover");
+        // })
+
+
+        //hover函数
+        // $("#div1").hover(function(){
+        //     console.log("鼠标移入事件");
+        // },function(){
+        //     console.log("鼠标移出事件");
+        // })
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery选择器</title>
+    <script src="./js/jquery3.7.1.js"></script>
+</head>
+<body>
+    <div id="div1" class="div1">
+        <span>aaa</span>
+    </div>
+    <div class="div1">bbb</div>
+    <div class="div1">ccc</div>
+    <div id="div4">
+        <p>
+            <span>
+                ddd
+            </span>
+        </p>
+    </div>
+
+    <script>
+        // ----------------------层级选择器----------------------------
+        //获取所有div元素中第一个元素
+        // $("div:first").css("background-color","pink");
+        // $("div").first().css("background-color","red");
+        //获取div中最后一个d元素
+        // $("div:last").css("background-color","pink");
+        //选择div中class不是div1的元素
+        // $("div:not(.div1)").css("background-color","blue");
+        //选中所有div元素，设置其偶数行的背景颜色
+        // $("div:even").css("background-color","gray");
+
+        // $("div:eq(3)").css("background-color","yellow");
+
+        // ----------------------层级选择器----------------------------
+        //选中div下所有span元素，设置其背景颜色
+        // $("div span").css("color","red");
+        //查找div其下span子元素
+        // $("div>span").css("color","red");
+        //查找id为div1其后的第一个div元素
+        // $("#div1 + div").css("color","blue");
+        //查找id为div1其后的所有div元素
+        // $("#div1 ~ div").css("color","blue");
+
+        // ----------------------基本选择器----------------------------
+        //id选择器
+        //$("#div1").css({"background-color":"red","font-size":"20px"});
+        //类选择器
+        // $(".div1").css("background-color","red");
+        //标签选择器
+        // $("div#div4").css("background-color","pink");
+        //组合选择器
+        // $("#div1,#div4").css("background-color","orange");
+
+
+
+    </script>
+</body>
+</html>
