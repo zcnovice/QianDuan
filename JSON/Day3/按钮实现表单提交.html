@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form id = "form1">
+        
+        <input type="text" id="uname" placeholder="请输入用户名"></input>
+        <input type="password" id="sex" placeholder="请输入性别"></input>
+        <input type = "button" value="提交" onclick="SSS()">
+    </form>
+
+    <script>
+        function SSS(){
+           //获取表单对象
+           var form1 = document.getElementById("form1");
+
+           //设置action属性
+           form.action = "../Day2/练习/表格节点操作.html";
+
+           //设置提交方式
+           form.method = "get";
+
+           //提交表单
+           form.submit();
+        }
+    </script>
+</body>
+</html>
