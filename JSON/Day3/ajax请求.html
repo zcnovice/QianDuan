@@ -7,6 +7,19 @@
     <script src="./js/jQuery-3.7.1.js"></script>
 </head>
 <body>
-    
+    <div id="myMssdodal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>修改用户信息</h2>
+            <form id="editFddorm">
+                <input type="hidden" id="editUdserId" name="user_id">
+                <label for="editUsername">用户姓名:</label>
+                <input type="text" id="editUserdname" name="username" required><br><br>
+                <label for="editEmail">用户邮箱:</label>
+                <input type="email" id="editEdmail" name="email" required><br><br>
+                <button type="button" onclick="updateUser()">提交</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
